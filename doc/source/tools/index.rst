@@ -23,7 +23,6 @@ This section describes the command line tools provided with Apache Cassandra.
    :maxdepth: 3
 
    cqlsh
-   generatetokens
    nodetool/nodetool
    sstable/index
    cassandra_stress

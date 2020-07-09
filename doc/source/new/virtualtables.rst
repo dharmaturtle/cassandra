@@ -66,21 +66,21 @@ Virtual Table Limitations
 
 Virtual tables and virtual keyspaces have some limitations initially though some of these could change such as:
 
-- Cannot alter or drop virtual keyspaces or tables
 - Cannot truncate virtual tables
 - Expiring columns are not supported by virtual tables
 - Conditional updates are not supported by virtual tables
-- Cannot create tables in virtual keyspaces
-- Cannot perform any operations against virtual keyspace
 - Secondary indexes are not supported on virtual tables
-- Cannot create functions in virtual keyspaces
-- Cannot create types in virtual keyspaces
 - Materialized views are not supported on virtual tables
 - Virtual tables don't support ``DELETE`` statements
 - Cannot ``CREATE TRIGGER`` against a virtual table
-- Conditional ``BATCH`` statements cannot include mutations for virtual tables
 - Cannot include a virtual table statement in a logged batch
+- Conditional ``BATCH`` statements cannot include mutations for virtual tables
 - Mutations for virtual and regular tables cannot exist in the same batch
+- Cannot alter or drop virtual keyspaces or tables
+- Cannot create functions in virtual keyspaces
+- Cannot create types in virtual keyspaces
+- Cannot create tables in virtual keyspaces
+- Cannot perform any operations against virtual keyspace
 - Cannot create aggregates in virtual keyspaces; but may run aggregate functions on select
 
 Listing and Describing Virtual Tables
@@ -231,7 +231,7 @@ The ``settings`` table  is rather useful and lists all the current configuration
    (224 rows)
 
 
-The ``settings`` table can be really useful if yaml file has been changed since startup and don't know running configuration, or to find if they have been modified via jmx/nodetool or virtual tables.
+The ``settings`` table can be really useful if yaml file has been changed since startup and dont know running configuration, or to find if they have been modified via jmx/nodetool or virtual tables.
 
 
 Thread Pools Virtual Table
