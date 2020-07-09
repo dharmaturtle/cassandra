@@ -311,7 +311,9 @@ names as their name.
 Appendix C: Dropping Compact Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``ALTER ... DROP COMPACT STORAGE`` statement makes Compact Tables CQL-compatible,
+Starting version 4.0, Thrift and COMPACT STORAGE is no longer supported.
+
+'ALTER ... DROP COMPACT STORAGE' statement makes Compact Tables CQL-compatible,
 exposing internal structure of Thrift/Compact Tables:
 
 - CQL-created Compact Tables that have no clustering columns, will expose an
@@ -326,8 +328,3 @@ exposing internal structure of Thrift/Compact Tables:
   a compact value map with an empty name.
 - Thrift-created Compact Tables will have types corresponding to their
   Thrift definition.
-- If a row was written while a table was still compact but it has no live
-  cells due to later row or cell deletions, it may continue to be simply 
-  left out of query results, as is the normal behavior for compact tables.
-  Rows written after a table is fully CQL-compatible, if they have no live
-  cells but a live primary key, may be present in query results with null values.

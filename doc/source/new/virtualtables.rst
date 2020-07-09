@@ -73,7 +73,6 @@ Virtual tables and virtual keyspaces have some limitations initially though some
 - Materialized views are not supported on virtual tables
 - Virtual tables support modifications only if the underlaying implementation allows it
 - Cannot ``CREATE TRIGGER`` against a virtual table
-- Conditional ``BATCH`` statements cannot include mutations for virtual tables
 - Cannot include a virtual table statement in a logged batch
 - Mutations for virtual and regular tables cannot exist in the same batch
 - Cannot alter or drop virtual keyspaces or tables
@@ -81,6 +80,7 @@ Virtual tables and virtual keyspaces have some limitations initially though some
 - Cannot create types in virtual keyspaces
 - Cannot create tables in virtual keyspaces
 - Cannot perform any operations against virtual keyspace
+- Conditional ``BATCH`` statements cannot include mutations for virtual tables
 - Cannot create aggregates in virtual keyspaces; but may run aggregate functions on select
 
 Listing and Describing Virtual Tables
@@ -231,7 +231,7 @@ The ``settings`` table  is rather useful and lists all the current configuration
    (224 rows)
 
 
-The ``settings`` table can be really useful if yaml file has been changed since startup and don't know running configuration, or to find if they have been modified via jmx/nodetool or virtual tables.
+The ``settings`` table can be really useful if yaml file has been changed since startup and dont know running configuration, or to find if they have been modified via jmx/nodetool or virtual tables.
 
 
 Thread Pools Virtual Table

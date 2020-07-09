@@ -25,7 +25,6 @@ Contributing to Cassandra
    testing
    patches
    code_style
-   license_compliance
    how_to_review
    how_to_commit
    documentation
